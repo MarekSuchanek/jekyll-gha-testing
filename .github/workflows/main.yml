@@ -10,7 +10,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches:
-      - ${{ github.event.repository.default_branch }}
+      - main
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,7 +40,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -59,13 +60,17 @@ jobs:
         id: name
         run: |
           JEKYLL_ENV=${{ github.event.inputs.environment }}
-          echo "::set-output jekyll_env=value::${JEKYLL_ENV:-"production"}"
+          echo "{jekyll_env}={${JEKYLL_ENV:-'production'}}" >> $GITHUB_OUTPUT
+          echo "$GITHUB_OUTPUT"
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: ${{ steps.name.outputs.jekyll_env }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_BRANCH: ${{ github.ref_name }}
 
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default

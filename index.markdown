@@ -6,7 +6,10 @@ layout: home
 ---
 
 {% if jekyll.environment == "development" %}
-Jekyll ENV = "development"
+* Jekyll ENV = "development"
 {% else %}
-Jekyll ENV = "production"
+* Jekyll ENV = "production"
 {% endif %}
+* GitHub repo: {{ site.github_repo }}
+* GitHub branch: {{ site.github_branch }}
+* GitHub SHA: {{ site.github_sha }}
