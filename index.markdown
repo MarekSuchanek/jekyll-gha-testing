@@ -4,3 +4,9 @@
 
 layout: home
 ---
+
+{% if jekyll.environment == "development" %}
+Jekyll ENV = "development"
+{% else %}
+Jekyll ENV = "production"
+{% endif %}
