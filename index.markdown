@@ -10,11 +10,11 @@ layout: home
 {% else %}
 * Jekyll ENV = "production"
 {% endif %}
-* GitHub repo: {{ site.github_repo }}
-* GitHub repo URL: {{ site.github_url }}
-* GitHub branch: {{ site.github_branch }}
-* GitHub branch URL: {{ site.github_branch_url }}
-* GitHub commit (SHA): {{ site.github_commit }}
-* GitHub commit (SHA) URL: {{ site.github_commit_url }}
+* GitHub repo: {{ site.github.repo }}
+* GitHub repo URL: {{ site.github.repo_url }}
+* GitHub branch: {{ site.github.branch }}
+* GitHub branch URL: {{ site.github.branch_url }}
+* GitHub commit (SHA): {{ site.github.commit }}
+* GitHub commit (SHA) URL: {{ site.github.commit_url }}
 
 Some cool change is here...
