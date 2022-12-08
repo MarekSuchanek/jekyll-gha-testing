@@ -11,8 +11,10 @@ layout: home
 * Jekyll ENV = "production"
 {% endif %}
 * GitHub repo: {{ site.github_repo }}
+* GitHub repo URL: {{ site.github_url }}
 * GitHub branch: {{ site.github_branch }}
-* GitHub SHA: {{ site.github_sha }}
-* GitHub URL: {{ site.github_url }}
+* GitHub branch URL: {{ site.github_branch_url }}
+* GitHub commit (SHA): {{ site.github_commit }}
+* GitHub commit (SHA) URL: {{ site.github_commit_url }}
 
 Some cool change is here...
