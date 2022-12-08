@@ -55,9 +55,11 @@ jobs:
         env:
           JEKYLL_ENV: ${{ steps.name.outputs.jekyll_env }}
           GITHUB_REPO: ${{ github.repository }}
-          GITHUB_URL: ${{ github.repositoryUrl }}
-          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          GITHUB_COMMIT: ${{ github.sha }}
+          GITHUB_COMMIT_URL: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
           GITHUB_BRANCH: ${{ github.ref_name }}
+          GITHUB_BRANCH_URL: ${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
