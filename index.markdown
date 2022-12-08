@@ -13,5 +13,6 @@ layout: home
 * GitHub repo: {{ site.github_repo }}
 * GitHub branch: {{ site.github_branch }}
 * GitHub SHA: {{ site.github_sha }}
+* GitHub URL: {{ site.github_url }}
 
 Some cool change is here...
